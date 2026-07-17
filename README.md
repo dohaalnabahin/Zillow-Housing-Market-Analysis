@@ -1,6 +1,7 @@
 # Comprehensive Zillow Housing Market Analysis & Predictive Forecasting
 
-An enterprise-grade data science project executing data restructuring, historical exploration, time series decomposition, automated ARIMA optimization, and interactive geographic indexing on Zillow home value records (2000–2020).
+A comprehensive data science project focused on time series exploration, forecasting, and interactive spatial analysis of U.S. housing market trends using Zillow home value data.
+
 
 ---
 
