@@ -72,5 +72,5 @@ All visualizations are deployed in a unified interactive Tableau Story. The inte
 ---
 
 ## 🔗 Live Project Deliverables
-* **Jupyter Source Code:** [View Production Notebook Notebook](https://public.tableau.com/app/profile/doha.al.nabahin/viz/ZillowHousingMarketAnalysisStory/ZillowHousingMarketAnalysisStory?publish=yes)
-* **Interactive Tableau Presentation:** [Launch Live Tableau Story Application](https://colab.research.google.com/drive/1dxhque2BMbxwgR9mIjvvCtP9VpNEIBkM?usp=sharing)
+* **Jupyter Source Code:** [View Production Notebook Notebook](https://colab.research.google.com/drive/1dxhque2BMbxwgR9mIjvvCtP9VpNEIBkM?usp=sharing)
+* **Interactive Tableau Presentation:** [Launch Live Tableau Story Application](https://public.tableau.com/app/profile/doha.al.nabahin/viz/ZillowHousingMarketAnalysisStory/ZillowHousingMarketAnalysisStory?publish=yes)
