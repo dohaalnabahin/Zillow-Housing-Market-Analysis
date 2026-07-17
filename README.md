@@ -26,7 +26,7 @@ The initial wide-form raw data columns representing monthly increments were prog
 ### 📈 Historical Visual Trajectory
 *Below is the yearly aggregated trajectory showcasing historical home values across the five targeted states:*
 
-![Historical Home Values Trend by State](https://github.com)
+![Historical Home Values Trend by State](Historical_Home_Values_Trend_by_State.png)
 
 ---
 
@@ -47,7 +47,7 @@ This section isolates the monthly mean home prices for the State of Oregon (OR) 
 | **Algorithmic Auto-ARIMA** | $\text{ARIMA}(0, 2, 0)$ | 3453.299 | **Selected Final Model:** Optimally isolated the underlying stochastic trend with efficient parameter purity. |
 
 ### 🔮 12-Month Predictive Horizon Output (2019)
-![Oregon 12-Month Future Forecast](https://github.com)
+![Oregon 12-Month Future Forecast](Oregon_12_Month_Future_Forecast.png)
 
 * **Predicted Final Month Evaluation:** $337,253.12
 * **12-Month Projected Growth Rate:** +5.71%
@@ -67,10 +67,10 @@ All visualizations are deployed in a unified interactive Tableau Story. The inte
 | **Story Point 3** | High-Density Highlight Grid | Colored Square Highlight Matrix; Custom Text Values; Filtered for Top 20. | Displays granular structural home values via interactive Month/Year Single Value Sliders. |
 | **Story Point 4** | Spatial Choropleth Map | Dark-Themed Map Background; Full Color Range Gradient; Tooltip Overlay. | Provides detailed geo-density insights down to the Zip Code level with City and County details visible on hover. |
 
-![Tableau Visual Presentation Overview](https://github.com)
+![Tableau Visual Presentation Overview](Tableau_Visual_Presentation_Overview.png)
 
 ---
 
 ## 🔗 Live Project Deliverables
-* **Jupyter Source Code:** [View Production Notebook Notebook](./Time_Series_Analysis.ipynb)
-* **Interactive Tableau Presentation:** [Launch Live Tableau Story Application](https://tableau.com)
+* **Jupyter Source Code:** [View Production Notebook Notebook](https://public.tableau.com/app/profile/doha.al.nabahin/viz/ZillowHousingMarketAnalysisStory/ZillowHousingMarketAnalysisStory?publish=yes)
+* **Interactive Tableau Presentation:** [Launch Live Tableau Story Application](https://colab.research.google.com/drive/1dxhque2BMbxwgR9mIjvvCtP9VpNEIBkM?usp=sharing)
