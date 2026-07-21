@@ -112,6 +112,8 @@ Solution:
 
 - Second-order Differencing (d=2)
 
+![Stationarity](Stationarity.png)
+
 ---
 
 ## Model Building
