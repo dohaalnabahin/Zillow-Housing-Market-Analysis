@@ -186,6 +186,9 @@ Purpose:
 
 - Identify the most expensive housing markets.
 
+- ![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+
+
 ---
 
 ## Story Point 2
@@ -205,6 +208,9 @@ Finding:
 
 ✅ Washington recorded the highest increase (~95%).
 
+![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+
+
 ---
 
 ## Story Point 3
@@ -222,6 +228,9 @@ Includes:
 Interactive Filter:
 
 - Month / Year Slider
+
+- ![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+
 
 ---
 
