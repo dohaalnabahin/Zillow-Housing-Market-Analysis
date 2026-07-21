@@ -93,6 +93,8 @@ Visualize historical housing prices across the five selected states.
 - Very weak seasonality
 - Random residual component
 
+![Decomposition](Decomposition.png)
+
 ---
 
 ### Stationarity Test
