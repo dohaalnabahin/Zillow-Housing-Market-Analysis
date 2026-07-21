@@ -256,7 +256,7 @@ Purpose:
 
 ---
 
-![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+![Tableau Story Overview](Choropleth_Map.png)
 
 ---
 
