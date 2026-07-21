@@ -208,7 +208,7 @@ Finding:
 
 ✅ Washington recorded the highest increase (~95%).
 
-![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+![Tableau Story Overview](Home.png)
 
 
 ---
@@ -229,7 +229,7 @@ Interactive Filter:
 
 - Month / Year Slider
 
-- ![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+- ![Tableau Story Overview](Highlight.png)
 
 
 ---
@@ -256,7 +256,7 @@ Purpose:
 
 ---
 
-![Tableau Story Overview](Choropleth_Map.png)
+![Tableau Story Overview](Choropleth.png)
 
 ---
 
