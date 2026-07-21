@@ -148,6 +148,11 @@ Reason:
 
 ---
 
+![Stationarity](EvaluationV.png)
+
+![Stationarity](Evaluation.png)
+
+
 ## Forecast
 
 Forecast Horizon:
