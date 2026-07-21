@@ -1,76 +1,277 @@
-# Comprehensive Zillow Housing Market Analysis & Predictive Forecasting
+# 🏠 Comprehensive Zillow Housing Market Analysis & Predictive Forecasting
 
-A comprehensive data science project focused on time series exploration, forecasting, and interactive spatial analysis of U.S. housing market trends using Zillow home value data.
-
+A comprehensive data science project focused on **time series analysis, forecasting, and interactive spatial visualization** of Zillow U.S. housing market data.
 
 ---
 
-## 📁 Repository Architecture & Layout
+# 📁 Repository Structure
+
 ```text
 ├── Data/
-│   └── data-for-tableau.csv         # Restructured regional subset (CA, WA, OR, AZ, NV) for 2010–2020
-├── Time_Series_Analysis.ipynb        # Comprehensive Google Colab Jupyter Notebook (Models & Evaluation)
-└── README.md                         # Detailed project document dashboard
+│   └── data-for-tableau.csv
+├── Time_Series_Analysis.ipynb
+└── README.md
 ```
 
 ---
 
-## 📊 Phase 1: Data Reshaping & Historical Exploratory Analysis
+# 📊 Phase 1 — Data Preparation & Exploratory Analysis
 
-The initial wide-form raw data columns representing monthly increments were programmatically melted into a long-form time-series format. Home values were aggregated to a clean yearly frequency using statistical mean grouping.
+## Data Preparation
 
-### Regional Tracking Parameters
-* **Target Geographic Baseline:** California (CA), Washington (WA), Oregon (OR), Arizona (AZ), Nevada (NV).
-* **Target Time Horizon:** Jan 01, 2010, through Dec 31, 2020.
+- Loaded the original Zillow dataset.
+- Converted the wide-format dataset into a long-format time series.
+- Renamed:
+  - Date column → **Date**
+  - Value column → **Home Value**
+- Converted Date to **Datetime**.
+- Set Date as the DataFrame index.
 
-### 📈 Historical Visual Trajectory
-*Below is the yearly aggregated trajectory showcasing historical home values across the five targeted states:*
+---
+
+## Data Filtering
+
+Filtered the dataset to include only:
+
+- California (CA)
+- Washington (WA)
+- Oregon (OR)
+- Arizona (AZ)
+- Nevada (NV)
+
+Time period:
+
+- 2010 → 2020
+
+---
+
+## Data Processing
+
+- Grouped Home Values by State.
+- Resampled to **Yearly Mean**.
+- Saved processed dataset as:
+
+```text
+Data/data-for-tableau.csv
+```
+
+---
+
+## Historical Trend
+
+### Objective
+
+Visualize historical housing prices across the five selected states.
+
+### Result
+
+- California maintained the highest home values.
+- Washington and Oregon showed continuous growth.
+- Arizona and Nevada recovered steadily after earlier declines.
 
 ![Historical Home Values Trend by State](Historical_Home_Values_Trend_by_State.png)
 
 ---
 
-## 🔮 Phase 2: Statistical Modeling & Time Series Forecasting (Oregon)
+# 🔮 Phase 2 — Time Series Forecasting (Oregon)
 
-This section isolates the monthly mean home prices for the State of Oregon (OR) from January 31, 2000, through December 31, 2018, to forecast real estate evaluations 12 months into the future.
+## Data Selection
 
-### 🛠️ Exploratory Stationarity & Structural Analysis
-1. **Time Series Decomposition:** Additive decomposition isolated a negligible seasonal component (+200 to -$600) relative to a dominant non-linear economic macro trend ($300k+).
-2. **Stationarity Validation:** Augmented Dickey-Fuller (ADF) testing confirmed non-stationarity ($p\text{-value} = 0.3874$). Algorithmic evaluation recommended second-order differencing ($d = 2$).
+- State: Oregon (OR)
+- Monthly Mean Home Values
+- Period:
+  - January 2000
+  - December 2018
 
-### 🔬 Model Evaluation & Convergence Dashboard
+---
 
-| Model Configuration Type | Target Hyperparameters | AIC Metric | Key Diagnostic Performance Output |
-| :--- | :--- | :--- | :--- |
-| **Manual Exploratory ARIMA** | $\text{ARIMA}(1, 2, 1)$ | 3457.674 | AR and MA coefficients failed significance test ($p\text{-value} > 0.05$); residual autocorrelation remained. |
-| **Manual Seasonal ARIMA** | $\text{SARIMA}(1,2,1) \times (1,0,1)_{12}$ | 3393.397 | Significant seasonal components; superior AIC scores relative to manual non-seasonal configurations. |
-| **Algorithmic Auto-ARIMA** | $\text{ARIMA}(0, 2, 0)$ | 3453.299 | **Selected Final Model:** Optimally isolated the underlying stochastic trend with efficient parameter purity. |
+## Exploratory Analysis
 
-### 🔮 12-Month Predictive Horizon Output (2019)
+### Time Series Decomposition
+
+- Trend detected ✔
+- Very weak seasonality
+- Random residual component
+
+---
+
+### Stationarity Test
+
+Used:
+
+- Augmented Dickey-Fuller (ADF)
+
+Result:
+
+- p-value = **0.3874**
+- Series is **Non-Stationary**
+
+Solution:
+
+- Second-order Differencing (d=2)
+
+---
+
+## Model Building
+
+Three forecasting models were evaluated.
+
+| Model | Parameters | AIC |
+|-------|------------|------|
+| Manual ARIMA | ARIMA(1,2,1) | 3457.674 |
+| Manual SARIMA | (1,2,1)(1,0,1)12 | 3393.397 |
+| Auto ARIMA | ARIMA(0,2,0) | **3453.299** |
+
+---
+
+## Model Evaluation
+
+Compared using:
+
+- AIC
+- Residual Diagnostics
+- Forecast Accuracy
+
+Final Selected Model:
+
+✅ **Auto ARIMA**
+
+Reason:
+
+- Simpler model.
+- Better diagnostics.
+- Stable forecasting performance.
+
+---
+
+## Forecast
+
+Forecast Horizon:
+
+- 12 Months
+
+Result:
+
+- Final predicted Home Value:
+  - **$337,253.12**
+
+Growth:
+
+- **+5.71%**
+
 ![Oregon 12-Month Future Forecast](Oregon_12_Month_Future_Forecast.png)
 
-* **Predicted Final Month Evaluation:** $337,253.12
-* **12-Month Projected Growth Rate:** +5.71%
+---
+
+# 🎨 Phase 3 — Tableau Story
+
+Interactive Tableau Story consisting of **4 Story Points**.
 
 ---
 
-## 🎨 Phase 3: Spatial Analytics & Interactive Storytelling Architecture
+## Story Point 1
 
-All visualizations are deployed in a unified interactive Tableau Story. The interface is optimized using high-contrast dark mappings and dynamic dashboard components.
+### Median Home Value by Location
 
-### 📌 Interactive Presentation Blueprint (Tableau Story Points)
+Visualization:
 
-| Story Point Sequence | Target Chart Configuration | Visual Attributes & Mappings | Primary Analytical Insight Delivered |
-| :--- | :--- | :--- | :--- |
-| **Story Point 1** | Localized Premium Ranking | Vertical Bar Graph; Colored by County Name; Top 20 Filter. | Identifies premium housing cost concentrations across core U.S. West Coast metropolitan areas. |
-| **Story Point 2** | Percentage Difference Matrix | Multi-Line Chart; Relative to Jan 2010 Baseline; Custom Annotation. | Confirms **Washington (WA)** as the fastest-growing market with a ~95% price expansion over the decade. |
-| **Story Point 3** | High-Density Highlight Grid | Colored Square Highlight Matrix; Custom Text Values; Filtered for Top 20. | Displays granular structural home values via interactive Month/Year Single Value Sliders. |
-| **Story Point 4** | Spatial Choropleth Map | Dark-Themed Map Background; Full Color Range Gradient; Tooltip Overlay. | Provides detailed geo-density insights down to the Zip Code level with City and County details visible on hover. |
+- Vertical Bar Chart
 
-![Tableau Visual Presentation Overview](Tableau_Visual_Presentation_Overview.png)
+Features:
+
+- Top 20 Zip Codes
+- Colored by County
+
+Purpose:
+
+- Identify the most expensive housing markets.
 
 ---
 
-## 🔗 Live Project Deliverables
-* **Jupyter Source Code:** [View Production Notebook Notebook](https://colab.research.google.com/drive/1dxhque2BMbxwgR9mIjvvCtP9VpNEIBkM?usp=sharing)
-* **Interactive Tableau Presentation:** [Launch Live Tableau Story Application](https://public.tableau.com/app/profile/doha.al.nabahin/viz/ZillowHousingMarketAnalysisStory/ZillowHousingMarketAnalysisStory?publish=yes)
+## Story Point 2
+
+### Home Value Growth
+
+Visualization:
+
+- Line Chart
+
+Features:
+
+- Colored by State
+- Percentage increase from 2010
+
+Finding:
+
+✅ Washington recorded the highest increase (~95%).
+
+---
+
+## Story Point 3
+
+### Highlight Table
+
+Includes:
+
+- State
+- County
+- City
+- Zip Code
+- Median Home Value
+
+Interactive Filter:
+
+- Month / Year Slider
+
+---
+
+## Story Point 4
+
+### Choropleth Map
+
+Visualization:
+
+- Zip Code Heat Map
+
+Features:
+
+- Dark Background
+- Colored by Median Home Value
+- Tooltip:
+  - County
+  - City
+
+Purpose:
+
+- Explore housing prices geographically.
+
+---
+
+![Tableau Story Overview](Tableau_Visual_Presentation_Overview.png)
+
+---
+
+# 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Statsmodels
+- pmdarima
+- Tableau Public
+- Google Colab
+
+---
+
+# 🔗 Project Links
+
+### 📒 Google Colab
+
+https://colab.research.google.com/drive/1dxhque2BMbxwgR9mIjvvCtP9VpNEIBkM?usp=sharing
+
+---
+
+### 📊 Tableau Story
+
+https://public.tableau.com/app/profile/doha.al.nabahin/viz/ZillowHousingMarketAnalysisStory/ZillowHousingMarketAnalysisStory?publish=yes
